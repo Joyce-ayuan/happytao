@@ -28,6 +28,9 @@ $(function () {
             min: 2,
             max: 6,
             message: "长度为2-6位"
+          },
+          callback: {
+            message: "用户名不存在"
           }
         }
       },
@@ -41,6 +44,9 @@ $(function () {
             min: 6,
             max: 12,
             message: "长度为6-12位"
+          },
+          callback: {
+            message: "密码错误"
           }
         }
       }
@@ -64,13 +70,13 @@ $(function () {
       data: $('#form').serialize(),
       dataType: "json",
       success: function (res) {
-        if(res.error == 1000){
-          alert(res.message);
+        if (res.error == 1000) { // 用户名不存在
+          $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
         }
-        if(res.error == 1001){
-          alert(res.message);
+        if (res.error == 1001) { // 密码错误
+          $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
         }
-        if(res.success){
+        if (res.success) {
           location.href = "index.html";
         }
       }
@@ -78,12 +84,11 @@ $(function () {
   });
 
   /*
-  * 3. 重置功能 (本身reset按钮就可以重置内容, 需要调用表单校验插件的方法, 重置校验状态)
-  * */
+   * 3. 重置功能 (本身reset按钮就可以重置内容, 需要调用表单校验插件的方法, 重置校验状态)
+   * */
 
-  $('[type="reset"').click(function () {  
+  $('[type="reset"').click(function () {
     $(form).data('bootstrapValidator').resetForm();
   })
-
 
 })
