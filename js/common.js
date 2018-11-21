@@ -16,4 +16,10 @@ $(function () {
         }, 500)
     })
 
+    // 公共左侧侧边栏分类管理二级菜单切换
+    $(".classify").click(function () {
+        // next()找下一个兄弟元素  
+        $(this).next().stop().slideToggle("secondary");
+    })
+
 });

@@ -17,6 +17,10 @@ ol,li{
   margin-top: 150px;
 }
 
+.ml_20{
+  margin-left: 20px;
+}
+
 .panel .panel-title{
   height: 40px;
   text-align: center;
@@ -72,8 +76,12 @@ html,body{
 }
 
 .lt_aside .nav li{
-  height: 40px;
   line-height: 40px;
+}
+
+/* 分类管理二级菜单切换 */
+.secondary{
+  display: none;
 }
 
 .lt_aside .nav li i{
@@ -81,7 +89,9 @@ html,body{
 }
 
 .lt_aside .nav li a{
+  display: block;
   color: #fff;
+  height: 40px;
 }
 
 /* ------------------首页顶部公共部分-------------------*/
