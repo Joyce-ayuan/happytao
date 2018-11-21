@@ -176,3 +176,11 @@ html,body{
   color: #ccc;
   content: "/\00a0";
 }
+
+/* ------------------首页图表-------------------*/
+.lt_content .echarts_left,
+.lt_content .echarts_right {
+  width: 48%;
+  height: 400px;
+  margin-left: 10px;
+}
