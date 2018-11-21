@@ -17,6 +17,10 @@ ol,li{
   margin-top: 150px;
 }
 
+.mar-l-15{
+  margin-left: 15px;
+}
+
 .pd_20{
   padding-left: 20px;
 }
@@ -158,13 +162,18 @@ html,body{
   padding-top: 50px;
   padding-left: 180px;
   background-color: #fff;
+  transition: all 1s;
 }
 .lt_breadcrumbs{
   background-color: #F5F5F5;
   margin-top: 20px;
-  margin-left: 20px;
   padding: 10px 0 10px 10px;
   border-radius: 10px;
+  margin-left: 15px;
+}
+
+.container-fluid.menu_toggle{
+  padding-left: 0;
 }
 
 .lt_breadcrumbs li{
@@ -182,5 +191,13 @@ html,body{
 .lt_content .echarts_right {
   width: 48%;
   height: 400px;
-  margin-left: 10px;
+}
+
+/* ------------------用户管理页表格-------------------*/
+.lt_info .table td{
+  text-align: center;
+  vertical-align: middle;
+}
+.lt_info .table th{
+  text-align: center;
 }

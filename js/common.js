@@ -26,6 +26,7 @@ $(function () {
     $(".lt_header .icon_left").click(function () {  
         $(".lt_aside").toggleClass("menu_toggle");
         $(".lt_header").toggleClass("menu_toggle");
+        $(".container-fluid").toggleClass("menu_toggle");
     })
 
     // 添加退出模态框
