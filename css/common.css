@@ -17,8 +17,8 @@ ol,li{
   margin-top: 150px;
 }
 
-.ml_20{
-  margin-left: 20px;
+.pd_20{
+  padding-left: 20px;
 }
 
 .panel .panel-title{
@@ -41,6 +41,12 @@ html,body{
   top: 0;
   left: 0;
   z-index: 999;
+  transition: all 1s;
+}
+
+/* 用于公共的菜单栏切换 */
+.lt_aside.menu_toggle{
+  left: -180px;
 }
 
 .lt_aside .title{
@@ -75,8 +81,13 @@ html,body{
   font-size: 16px;
 }
 
+.lt_aside .nav ul{
+  padding: 0;
+}
+
 .lt_aside .nav li{
   line-height: 40px;
+  text-align: center;
 }
 
 /* 分类管理二级菜单切换 */
@@ -92,6 +103,14 @@ html,body{
   display: block;
   color: #fff;
   height: 40px;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+/* 用于导航栏菜单效果 */
+.lt_aside .nav li a.current{
+  background-color: #1D1F21;
+  border-left: 3px solid #006699;
 }
 
 /* ------------------首页顶部公共部分-------------------*/
@@ -103,6 +122,12 @@ html,body{
   left: 0;
   background-color: #3C8DBC;
   padding-left: 180px;
+  transition: all 1s;
+}
+
+/* 用于公共的菜单栏切换 */
+.lt_header.menu_toggle{
+  padding-left: 0;
 }
 
 .lt_header a {
@@ -121,4 +146,33 @@ html,body{
 
 .lt_header .icon_right{
   float: right;
+}
+
+/* ------------------模态框-------------------*/
+.modal .modal-body i{
+  color: red;
+}
+
+/* ------------------面包屑导航-------------------*/
+.container-fluid{
+  padding-top: 50px;
+  padding-left: 180px;
+  background-color: #fff;
+}
+.lt_breadcrumbs{
+  background-color: #F5F5F5;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px 0 10px 10px;
+  border-radius: 10px;
+}
+
+.lt_breadcrumbs li{
+  display: inline-block;
+}
+
+.lt_breadcrumbs .active::after{
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
 }
