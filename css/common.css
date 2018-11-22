@@ -17,6 +17,10 @@ ol,li{
   margin-top: 150px;
 }
 
+.mt_20{
+  margin-top: 20px;
+}
+
 .mar-l-15{
   margin-left: 15px;
 }
@@ -159,6 +163,7 @@ html,body{
 
 /* ------------------面包屑导航-------------------*/
 .container-fluid{
+  margin-left: 20px;
   padding-top: 50px;
   padding-left: 180px;
   background-color: #fff;
@@ -169,7 +174,6 @@ html,body{
   margin-top: 20px;
   padding: 10px 0 10px 10px;
   border-radius: 10px;
-  margin-left: 15px;
 }
 
 .container-fluid.menu_toggle{
@@ -194,10 +198,10 @@ html,body{
 }
 
 /* ------------------用户管理页表格-------------------*/
-.lt_info .table td{
+.table td{
   text-align: center;
   vertical-align: middle;
 }
-.lt_info .table th{
+.table th{
   text-align: center;
 }
