@@ -1,90 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-    <link rel="stylesheet" href="./css/common.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="./lib/bootstrap-validator/css/bootstrapValidator.min.css"
+    />
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="./css/common.css" />
     <title>happy淘</title>
-</head>
+  </head>
 
-<body>
-
-    <!--------------------- 首页侧边栏 ----------------------->
+  <body>
+    <!-- ------------------- 首页侧边栏 --------------------- -->
     <div class="lt_aside">
-        <div class="title">
-            <p>黑马30期牛掰</p>
-        </div>
-        <div class="user">
-            <img src="./images/header.jpg" alt="">
-            <span>超级管理员</span>
-        </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a>
-                </li>
-                <li>
-                    <a class="classify" href="javascript:;"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
-                    <!-- 分类管理二级菜单 -->
-                    <div style="display:block" class="secondary ml_20">
-                        <a href="first.html">一级分类</a>
-                        <a class="current" href="second.html">二级分类</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="goods.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a>
-                </li>
-            </ul>
-        </div>
+      <div class="title"><p>黑马30期牛掰</p></div>
+      <div class="user">
+        <img src="./images/header.jpg" alt="" /> <span>超级管理员</span>
+      </div>
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="user.html"
+              ><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a
+            >
+          </li>
+          <li>
+            <a class="classify" href="javascript:;"
+              ><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a
+            >
+            <!-- 分类管理二级菜单 -->
+            <div style="display:block" class="secondary ml_20">
+              <a href="first.html">一级分类</a>
+              <a class="current" href="second.html">二级分类</a>
+            </div>
+          </li>
+          <li>
+            <a href="goods.html"
+              ><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!--------------------- 首页顶部公共部分 ----------------------->
+    <!-- ------------------- 首页顶部公共部分 --------------------- -->
     <div class="lt_header">
-        <a href="#" class="icon_left"><i class="glyphicon glyphicon-align-justify"></i></a>
-        <a href="#" class="icon_right" data-toggle="modal" data-target=".bs-example-modal-sm"><i class="glyphicon glyphicon-log-out"></i></a>
+      <a href="#" class="icon_left"
+        ><i class="glyphicon glyphicon-align-justify"></i
+      ></a>
+      <a
+        href="#"
+        class="icon_right"
+        data-toggle="modal"
+        data-target=".bs-example-modal-sm"
+        ><i class="glyphicon glyphicon-log-out"></i
+      ></a>
     </div>
 
     <div class="container-fluid">
-        <!--------------------- 公共面包屑导航 ----------------------->
-        <ol class="lt_breadcrumbs">
-            <li  class="active"><a href="#">管理系统</a></li>
-            <li  class="active">分类管理</li>
-            <li>二级分类</li>
-        </ol>
+      <!-- ------------------- 公共面包屑导航 --------------------- -->
+      <ol class="lt_breadcrumbs">
+        <li class="active"><a href="#">管理系统</a></li>
+        <li class="active">分类管理</li>
+        <li>二级分类</li>
+      </ol>
+
+      <!-- ------------------- 表格信息 --------------------- -->
+      <button class="btn btn-default btn-add">添加分类</button>
+      <table class="table table-bordered table-hover mt_20">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>一级分类名称</th>
+            <th>二级分类名称</th>
+            <th>二级分类LOGO</th>
+          </tr>
+        </thead>
+        <tbody class="infoTb">
+          <!-- 坑 -->
+        </tbody>
+      </table>
+
+      <!-- ------------------- 分页容器 --------------------- -->
+      <ul class="paginator" style="float: right"></ul>
     </div>
 
-    <!--------------------- 模态框 ----------------------->
+    <!-- ------------------- 退出模态框 --------------------- -->
     <div id="editModal" class="modal fade bs-example-modal-sm" tabindex="-1">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title">温馨提示</h4>
-                </div>
-                <div class="modal-body">
-                    <i class="glyphicon glyphicon-info-sign"></i>
-                    <span>您确定要退出后台管理系统吗？</span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消 </button>
-                    <button type="button" class="btn btn-primary">退出</button>
-                </div>
-            </div>
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <i class="glyphicon glyphicon-info-sign"></i>
+            <span>您确定要退出后台管理系统吗？</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary">退出</button>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- ------------------- 添加分类模态框 --------------------- -->
+    <div id="addModal" class="modal fade bs-example-modal-sm" tabindex="-1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <form id="form">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+              <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-default dropdown-toggle"
+                    type="button"
+                    id="dropdownMenu1"
+                    data-toggle="dropdown"
+                  >
+                    <span class="choose">请选择一级分类</span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <!-- 坑 -->
+                  </ul>
+                  <!-- 隐藏域  用于存储用户选择的那个一级分类的ID -->
+                  <input type="hidden" id="categoryId" name="categoryId" />
+                </div>
+              </div>
+              <div class="form-group mt_20">
+                <input
+                  name="brandName"
+                  type="text"
+                  class="form-control"
+                  placeholder="输入二级分类"
+                />
+
+                <!-- 火热的品牌 -->
+                <input type="hidden" name="hot" value="1" />
+              </div>
+              <div class="form-group">
+                <label for="fileupload" class="btn btn-default">添加图片</label>
+                <input
+                  style="display: none"
+                  type="file"
+                  name="pic1"
+                  id="fileupload"
+                  data-url="/category/addSecondCategoryPic"
+                />
+              </div>
+              <div class="form-group">
+                <img
+                  id="modalImg"
+                  style="width: 100px; height: 100px"
+                  src="./images/none.png"
+                  alt=""
+                />
+                <input type="hidden" name="brandLogo" id="brandLogo"/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+              <button type="submit" class="btn btn-primary btn-add-category">
+                添加
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/html" id="secondTmp">
+      {{ each rows v i }}
+           <tr>
+              <td> {{i + 1 + (page - 1) * size}} </td>
+              <td>{{v.categoryName}}</td>
+              <td>{{v.brandName}}</td>
+              <td>
+                  <img style="height: 50px" src="{{v.brandLogo}}" alt="">
+              </td>
+          </tr>
+      {{ /each }}
+    </script>
+
+    <script type="text/html" id="dropdownTmp">
+      {{ each rows v i }}
+          <li data-id = "{{v.id}}"><a href="#">{{v.categoryName}}</a></li>
+      {{ /each }}
+    </script>
 
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
-</body>
-
+    <script src="./js/second.js"></script>
+  </body>
 </html>
