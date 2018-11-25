@@ -14,12 +14,12 @@ ul,li,ol{
   max-width: 640px;
   height: 100%;
   width: 100%;
-  background-color: #ccc;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   padding-top: 45px;
   padding-bottom: 55px;
+  background-color: #fff;
 }
 
 /* -------------- 头部区域 ---------------- */
@@ -71,6 +71,53 @@ ul,li,ol{
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+/* -------------- 导航区域 ---------------- */
+.content .nav{
+  padding: 10px;
+}
+
+.content .nav li {
+  width: 33.33%;
+  float: left;
+}
+
+.content .nav li img{
+  display: block;
+  width: 100%;
+}
+
+/* -------------- 商品区域 ---------------- */
+.goods{
+  padding: 10px;
+}
+
+.goods li{
+  width: 48%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  float: left;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.goods li:nth-child(2n+1){
+  margin-right: 4%;
+}
+
+.goods li img{
+  display: block;
+  width: 100%;
+}
+
+.goods li .price{
+  color: red;
+}
+
+.goods li .oldPrice{
+  text-decoration: line-through;
 }
 
 /* -------------- 底部区域 ---------------- */

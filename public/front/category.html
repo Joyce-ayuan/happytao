@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/category.css">
+    <title>happy淘 phone</title>
+</head>
+
+<body>
+    <div class="container">
+        <!--------------- 头部区域 ------------------>
+        <div class="header">
+            <div class="icon_left">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                </a>
+            </div>
+            <h3>乐淘购</h3>
+            <div class="icon_right">
+                <a href="search.html">
+                    <i class="fa fa-search"></i>
+                </a>
+            </div>
+        </div>
+        <!--------------- 内容区域 ------------------>
+        <div class="content">
+            <!--------------- 左侧 ------------------>
+            <div class="category_left">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="clearfix  categoryName">
+                            <!-- 坑 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--------------- 右侧 ------------------>
+            <div class="category_right">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-clearfix details">
+                            <!-- 坑 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------------- 底部区域 ------------------>
+        <div class="footer">
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>
+                        <p>首页</p>
+                    </a></li>
+                <li><a class="current" href="#"><i class="fa fa-bars"></i>
+                        <p>分类页</p>
+                    </a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>
+                        <p>购物车</p>
+                    </a></li>
+                <li><a href="#"><i class="fa fa-user"></i>
+                        <p>用户中心</p>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--------------- 左侧模板 ------------------>
+    <script type="text/html" id="leftTmp">
+        {{ each rows v i }}
+            <li><a data-id="{{v.id}}" class="{{ i === 0 ? 'current' : ''}}" href="#">{{v.categoryName}}</a></li>
+        {{ /each }}
+    </script>
+
+    <!--------------- 右侧模板 ------------------>
+    <script type="text/html" id="rightTmp">
+        {{ if rows.length === 0 }}
+            <p>没有更多信息了</p>
+        {{ else }}
+            {{ each rows v i }}
+                <li><a href="#"><img src="{{ v.brandLogo }}" alt="">
+                    <p>{{ v.brandName }}</p></a></li>
+            {{ /each }}
+        {{ /if }}
+    </script>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/category.js"></script>
+</body>
+
+</html>
